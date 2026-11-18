@@ -1,0 +1,31 @@
+{
+  "name": "oss-b2b",
+  "version": "1.0.0",
+  "description": "OSS B2B - Plateforme tout-en-un pour la gestion et la coordination des activités B2B",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test test/**/*.test.js"
+  },
+  "keywords": [
+    "b2b",
+    "crm",
+    "gestion",
+    "activites",
+    "partenaires",
+    "coordination"
+  ],
+  "author": "OSS B2B Team",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
