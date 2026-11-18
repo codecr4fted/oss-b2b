@@ -1,0 +1,31 @@
+name: OSS B2B - CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-audit:
+    name: Tests & Audit de Sécurité
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupération du code (Checkout)
+        uses: actions/checkout@v4
+
+      - name: Configuration de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Installation des dépendances
+        run: npm ci
+
+      - name: Exécution des tests automatisés (Backend & API)
+        run: npm test
+
+      - name: Audit de sécurité des paquets
+        run: npm audit --audit-level=high
